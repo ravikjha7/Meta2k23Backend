@@ -67,8 +67,54 @@ app.post('/register', async (req, res) => {
             // console.log(user);
 
             try {
-                var message = `<p>Thanks for joining!</p><p>Save the date: Saturday, December 3rd</p><p>Join us for an offine mega event - <strong>Open Source Day</strong>, where we'll dig deeper into the two most popular technologies - Git and Bash.</p><br/><p>Thanks and Regards,<br/>Walchand Linux Users' Group.</p>`;
-                console.log(message);
+                var message = ``;
+                if(choice === "go") {
+                    message = `
+                    <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Go</strong> technology. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
+<p>Thank you again, and have a great day. </p>
+
+<p>Regards,</br>
+Walchand Linux Users' Group</p>
+
+<a href="https://www.instagram.com/wcewlug/" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990838/1_ueuuza.png" height="50em"/></a>
+<a href="https://linkedin.com/company/wlug-club" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/2_e25xxl.png" height="50em"/></a>
+<a href="https://www.facebook.com/wlugclub" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/3_ew5ope.png" height="50em"/></a>
+<a href="https://twitter.com/wcewlug" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/4_csegd1.png" height="50em"/></a>
+<a href="http://discord.wcewlug.org/join" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/5_nfvomt.png" height="50em"/></a>
+<a href="https://wcewlug.org/" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990835/6_onbyb0.png" height="50em"/></a>
+                    `;
+                } else if(choice === "docker") {
+                    message = `
+                    <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Docker</strong> technology. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
+<p>Thank you again, and have a great day. </p>
+
+<p>Regards,</br>
+Walchand Linux Users' Group</p>
+
+<a href="https://www.instagram.com/wcewlug/" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990838/1_ueuuza.png" height="50em"/></a>
+<a href="https://linkedin.com/company/wlug-club" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/2_e25xxl.png" height="50em"/></a>
+<a href="https://www.facebook.com/wlugclub" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/3_ew5ope.png" height="50em"/></a>
+<a href="https://twitter.com/wcewlug" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/4_csegd1.png" height="50em"/></a>
+<a href="http://discord.wcewlug.org/join" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/5_nfvomt.png" height="50em"/></a>
+<a href="https://wcewlug.org/" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990835/6_onbyb0.png" height="50em"/></a>
+                    `;
+                } else {
+                    message = `
+                    <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Both Go and Docker</strong> technologies. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
+<p>Thank you again, and have a great day. </p>
+
+<p>Regards,</br>
+Walchand Linux Users' Group</p>
+
+<a href="https://www.instagram.com/wcewlug/" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990838/1_ueuuza.png" height="50em"/></a>
+<a href="https://linkedin.com/company/wlug-club" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/2_e25xxl.png" height="50em"/></a>
+<a href="https://www.facebook.com/wlugclub" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/3_ew5ope.png" height="50em"/></a>
+<a href="https://twitter.com/wcewlug" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/4_csegd1.png" height="50em"/></a>
+<a href="http://discord.wcewlug.org/join" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/5_nfvomt.png" height="50em"/></a>
+<a href="https://wcewlug.org/" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990835/6_onbyb0.png" height="50em"/></a>
+                    `;
+                }
+                // console.log(message);
                 sendEmail(user.email, "Thank You For Registering For Meta 2K23", message);
 
             } catch (err) {
