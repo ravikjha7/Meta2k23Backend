@@ -31,9 +31,9 @@ app.post('/register', async (req, res) => {
     try {
 
         const existing = await User.findOne({ email: email });
-
+        
         if (existing != null) {
-            res.send({ error: "true" });
+            res.redirect('failure.html');
             return;
         }
 
@@ -72,11 +72,9 @@ app.post('/register', async (req, res) => {
                 sendEmail(user.email, "Thank You For Registering For Meta 2K23", message);
 
             } catch (err) {
-                console.log(err);
-                response = {
-                    error: "true",
-                    emailSent: "false"
-                }
+
+                res.redirect('failure.html');
+                return;
             }
 
         }
@@ -89,7 +87,7 @@ app.post('/register', async (req, res) => {
             error: "true"
         }
         // console.log("Mai Yaha Bhi Hu");
-        res.send(response);
+        res.redirect('failure.html');
     }
 })
 
