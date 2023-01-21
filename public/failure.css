@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* border: 2px solid red; */
+    background: linear-gradient(to right,#0b0028,#2e012a);
+    height: 100vh;
+}
+.card{
+    /* border: 2px solid rgba(255, 255, 255,0.1); */
+    border-radius: 10px;
+    width: 400px;
+    background-color: rgba(255, 255, 255,0.1);
+    color: white; 
+    margin: 1em;
+    padding: 1em 1em 0.1em 1em;
+    
+    
+}
+.card .text2{
+    
+    font-family: Inconsolata,monospace;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-weight: 100;
+}
+.btn{
+    border: 2px solid rgb(72, 39, 73);
+    background-color: rgb(72, 39, 73);
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* box-shadow: 1px 1px 1px black; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.image img{
+    width:50%;
+    height: 100px;
+}
+.btn:hover{
+    background-color: rgb(103, 56, 105);
+}

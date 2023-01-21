@@ -11,6 +11,7 @@ connectDB();
 
 const app = express();
 
+app.use(express.static('public'));
 app.use(cors());
 app.use(express.json());
 app.use(
@@ -81,7 +82,7 @@ app.post('/register', async (req, res) => {
         }
 
         // console.log(response);
-        res.send(response);
+        res.redirect('success.html');
 
     } catch (err) {
         var response = {
