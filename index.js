@@ -5,11 +5,18 @@ const bodyParser = require('body-parser');
 const connectDB = require("./db");
 const User = require('./user.js');
 const sendEmail = require('./email.js');
+const path = require('path');
+const ejsMate = require('ejs-mate');
+
 
 dotenv.config();
 connectDB();
 
 const app = express();
+
+app.engine('ejs', ejsMate);
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
 app.use(cors());
@@ -31,9 +38,16 @@ app.post('/register', async (req, res) => {
     try {
 
         const existing = await User.findOne({ email: email });
-        
+
         if (existing != null) {
-            res.redirect('failure.html');
+            res.render('failure', { message: "Email already Registered" });
+            return;
+        }
+
+        const existing2 = await User.findOne({ paymentID: paymentID });
+
+        if (existing2 != null) {
+            res.render('failure', { message: "Payment ID already used !!!" });
             return;
         }
 
@@ -68,7 +82,7 @@ app.post('/register', async (req, res) => {
 
             try {
                 var message = ``;
-                if(choice === "go") {
+                if (choice === "go") {
                     message = `
                     <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Go</strong> technology. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
 <p>Thank you again, and have a great day. </p>
@@ -83,7 +97,7 @@ Walchand Linux Users' Group</p>
 <a href="http://discord.wcewlug.org/join" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990834/5_nfvomt.png" height="50em"/></a>
 <a href="https://wcewlug.org/" target="_blank"><img src="https://res.cloudinary.com/ravikjha7/image/upload/v1669990835/6_onbyb0.png" height="50em"/></a>
                     `;
-                } else if(choice === "docker") {
+                } else if (choice === "docker") {
                     message = `
                     <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Docker</strong> technology. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
 <p>Thank you again, and have a great day. </p>
@@ -119,7 +133,7 @@ Walchand Linux Users' Group</p>
 
             } catch (err) {
 
-                res.redirect('failure.html');
+                res.render('failure', { message: err.message });
                 return;
             }
 
@@ -133,7 +147,7 @@ Walchand Linux Users' Group</p>
             error: "true"
         }
         // console.log("Mai Yaha Bhi Hu");
-        res.redirect('failure.html');
+        res.render('failure', { message: err.message });
     }
 })
 
