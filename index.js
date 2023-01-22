@@ -86,6 +86,8 @@ app.post('/register', async (req, res) => {
                     message = `
                     <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Go</strong> technology. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
 <p>Thank you again, and have a great day. </p>
+<p>For Further Details : </p>
+<p>Join the WhatsApp Group : <a href="https://chat.whatsapp.com/H60ujF2U1bLB8RBYeeed9g">(Here)</a></p>
 
 <p>Regards,</br>
 Walchand Linux Users' Group</p>
@@ -101,6 +103,8 @@ Walchand Linux Users' Group</p>
                     message = `
                     <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Docker</strong> technology. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
 <p>Thank you again, and have a great day. </p>
+<p>For Further Details : </p>
+<p>Join the WhatsApp Group : <a href="https://chat.whatsapp.com/H60ujF2U1bLB8RBYeeed9g">(Here)</a></p>
 
 <p>Regards,</br>
 Walchand Linux Users' Group</p>
@@ -116,6 +120,8 @@ Walchand Linux Users' Group</p>
                     message = `
                     <p>We are reaching out to thank you for registering for our Mega Event <strong>METAMORPHOSIS 2K23</strong> which will be held on January 28th and 29th 2023, at Walchand College of Engineering, Sangli. You have successfully registered for <strong>Both Go and Docker</strong> technologies. You will receive more details before the event date. Please feel free to share the event as we want as many talented people as possible. </p>
 <p>Thank you again, and have a great day. </p>
+<p>For Further Details : </p>
+<p>Join the WhatsApp Group : <a href="https://chat.whatsapp.com/H60ujF2U1bLB8RBYeeed9g">(Here)</a></p>
 
 <p>Regards,</br>
 Walchand Linux Users' Group</p>
